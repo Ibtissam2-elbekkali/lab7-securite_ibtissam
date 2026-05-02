@@ -64,7 +64,7 @@ Connecte-toi avec les identifiants par défaut :
 | Utilisateur | `mobsf` |
 | Mot de passe | `mobsf` |
 
-<img width="987" height="353" alt="Capture d&#39;écran 2026-05-02 152022" src="https://github.com/user-attachments/assets/a54d1f44-e142-42fb-ae46-c1a8fed22cf0" />
+
 <img width="431" height="249" alt="Capture d&#39;écran 2026-05-02 151857" src="https://github.com/user-attachments/assets/ab6c8405-bf1d-4dad-90f3-633b6afee469" />
 
 ---
@@ -184,46 +184,6 @@ v2 signature: True
 
 ---
 
-## Étape 6 — Lancer l'analyse dynamique
-
-Dans le rapport statique, clique sur le bouton **Start Dynamic Analysis**.
-
-MobSF va automatiquement :
-1. Installer DIVA sur l'émulateur
-2. Lancer **Frida Server**
-3. Configurer le **proxy HTTPS global**
-4. Installer son **certificat CA** pour intercepter le trafic SSL
-
----
-
-## Fonctionnalités disponibles en analyse dynamique
-
-| Outil | Utilité |
-|-------|---------|
-| **Logcat Stream** | Logs Android en temps réel — détection de fuites dans les logs |
-| **Network Traffic** | Trafic HTTP/HTTPS intercepté, y compris SSL déchiffré |
-| **Frida** | Injection de code JavaScript pour hooker des méthodes Java |
-| **Exported Activity Tester** | Test des activités accessibles sans authentification |
-| **Activity Tester** | Navigation forcée dans les écrans internes |
-| **File Monitor** | Surveillance des fichiers écrits par l'application |
-| **Intent Monitor** | Capture des intents envoyés/reçus |
-| **TLS/SSL Security Tester** | Test de la validation des certificats |
-| **Take a Screenshot** | Capture de l'écran de l'émulateur |
-| **Generate Report** | Export du rapport complet en PDF/JSON |
-
----
-
-## Dépannage
-
-| Problème | Solution |
-|----------|----------|
-| `'poetry' n'est pas reconnu` | Installer Poetry : `(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content \| python -` puis ajouter au PATH |
-| `Dynamic Analysis Failed` | Vérifier que l'émulateur est lancé **via `start_avd.ps1`** avant MobSF |
-| `adb not found` | Ajouter `C:\Users\<NOM>\AppData\Local\Android\Sdk\platform-tools` au PATH Windows |
-| Émulateur très lent | Activer Intel VT-x / AMD-V dans le BIOS + installer HAXM via SDK Manager |
-| Erreur de connexion ADB | Vérifier la règle pare-feu port 5555 (voir Étape 3) |
-
----
 
 Réalisé par Ibtissam El Bekkali
 
